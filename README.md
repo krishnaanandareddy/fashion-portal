@@ -1,8 +1,8 @@
-# E-Book-Store
+# Fashion-portal
 
 
 commands to run these project:
-first open the terminal in this folder  .\E Book Store cs257 project
+first open the terminal in this folder  .\Fashion-portal cs258 project
 
 .\project\Scripts\activate.ps1 
 -----  command to set to the virtual env named project
