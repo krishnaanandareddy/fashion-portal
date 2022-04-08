@@ -1,13 +1,13 @@
 body {
-  background-color: #659dbd;
-  font-family: "Dosis", sans-serif;
+  background-color: rgb(121, 143, 147);
+  font-family: "Arial", sans-serif;
 }
 .ulinks {
   color: white;
 }
 .se {
   position: absolute;
-  /* right: 8cm; */
+  /* right: 8cm; #659dbd */
   right: 8cm;
   width: 6cm;
   border: 1px;
@@ -70,7 +70,7 @@ a {
 }
 .navbar-products {
   position: absolute;
-  left: 4.5cm;
+  left: 5cm;
   top: 8px;
   font-size: 20px;
 }
@@ -90,14 +90,14 @@ a {
 }
 .navbarDropdown-category {
   position: absolute;
-  left: 7cm;
+  left: 8.2cm;
   font-size: 20px;
 }
 
 .navbar-brands {
   display: block;
   position: absolute;
-  left: 10cm;
+  left: 12cm;
   font-size: 20px;
 }
 
@@ -136,7 +136,7 @@ a {
 
 .nav-link-myorders {
   position: absolute;
-  left: 12.1cm;
+  left: 15cm;
   top: 8px;
   font-size: 20px;
 }

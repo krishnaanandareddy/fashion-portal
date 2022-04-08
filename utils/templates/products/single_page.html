@@ -21,7 +21,7 @@
       <h4>Product description:</h4>
       <p>{{sproduct.desc}}</p>
       <p>
-      <h5>Author:{{sproduct.brand.name}}</h5>
+      <h5>Brand:{{sproduct.brand.name}}</h5>
       </p>
       <form action="{{url_for('AddCart')}}" method="post">
         <input type="hidden" name="product_id" value="{{sproduct.id}}">
