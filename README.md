@@ -1,6 +1,7 @@
 # Fashion-portal
 
 
+
 commands to run these project:
 first open the terminal in this folder  .\Fashion-portal cs258 project
 
@@ -8,8 +9,8 @@ first open the terminal in this folder  .\Fashion-portal cs258 project
 -----  command to set to the virtual env named project
 (in github env is not uploaded create your own env after pulling repo from github)
 
-python app.py 
------  command to run python file app.py
+<!-- python app.py 
+-----  command to run python file app.py -->
 
 An important screenshot(62): there is a small error in flaskuploads.py and it is resolved and kept screenshot
 
