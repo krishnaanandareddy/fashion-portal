@@ -13,7 +13,7 @@
     <div class="col-md-6">
       <h3>Product name: {{sproduct.name}} </h3>
       <br>
-      <h5>Product price: Rs{{sproduct.price}}</h5>
+      <h5>Product price: <b>{{sproduct.price}} Rs</b></h5>
       <br>
       {% if sproduct.discount > 0 %}
       <h5>Discount: {{sproduct.discount}} % </h5>
@@ -21,7 +21,7 @@
       <h4>Product description:</h4>
       <p>{{sproduct.desc}}</p>
       <p>
-      <h5>Brand:{{sproduct.brand.name}}</h5>
+      <h5>Brand:  <b>{{sproduct.brand.name}}</b></h5>
       </p>
       <form action="{{url_for('AddCart')}}" method="post">
         <input type="hidden" name="product_id" value="{{sproduct.id}}">
