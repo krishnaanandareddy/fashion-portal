@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="navbar-products" href="/" id="products">Products <span class="sr-only"></span></a>
+              <a class="navbar-products" href="{{url_for('myorders')}}" id="products">Orders <span class="sr-only"></span></a>
             </li>
             <li class="nav-item dropdown">
               <a class="navbar-brands" href="#" id="navbarDropdown-brands" role="button" data-toggle="dropdown"
@@ -65,9 +65,9 @@
             <li class="nav-item">
               <a href="{{url_for('getCart')}}" class="nav-link-cart"> Cart ({{ session['Shoppingcart']|length }}) </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="{{url_for('myorders')}}" class="nav-link-myorders">Orders</a>
-            </li>
+            </li> -->
           </ul>
           <!-- result and search code here -->
         </div>
