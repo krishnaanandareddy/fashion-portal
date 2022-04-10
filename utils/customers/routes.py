@@ -127,3 +127,8 @@ def myorders():
         orders = CustomerOrder.query.filter_by(customer_id=customer_id,status=status).order_by(CustomerOrder.id.desc()).all()  
         list = [] 
     return render_template('customer/myorders.html',customer=customer,orders=orders, list=list)
+
+@app.route('/stylist')
+@login_required
+def stylist():
+    return render_template('stylist.html')
