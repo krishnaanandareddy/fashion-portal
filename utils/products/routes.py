@@ -13,6 +13,8 @@ def categories():
     categories = Category.query.join(Addproduct,(Category.id == Addproduct.category_id)).all()
     return categories
 
+
+
 @app.route('/begin')
 def begin():
     return render_template('products/begin.html')

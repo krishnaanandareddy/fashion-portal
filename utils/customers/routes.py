@@ -1,14 +1,31 @@
 from flask import render_template,session, request,redirect,url_for,flash,current_app,make_response
 from flask_login import login_required, current_user, logout_user, login_user
-from utils import app,db,photos,bcrypt,login_manager
+from utils import app,db,photos,bcrypt,login_manager, products
 # here search is there
 from .forms import CustomerRegisterForm, CustomerLoginFrom
 from .model import Register,CustomerOrder
+from ..products.models import Category,Brand,Addproduct
 import secrets
 import os
 import stripe
 publishable_key ='pk_test_51JxQ6KSBX0i9lNBgrf0xa94GJTQ4hNF0AlDXBYmnJBgf4qV8aYD2FD4Gvrz4kJnKqiU13G29sJF47N2R5z4lYQVk00LoJKwOas'
 stripe.api_key ='sk_test_51JxQ6KSBX0i9lNBgWVnDVPSkomyYgBFSH1GKTAPUADGNVloiSdqZLxI75q4FJLCMDRfYx009ZQ6H4FGM7Y4ZQIBU00imK5tozk'
+
+def brands():
+    brands = Brand.query.join(Addproduct, (Brand.id == Addproduct.brand_id)).all()
+    return brands
+
+def categories():
+    categories = Category.query.join(Addproduct,(Category.id == Addproduct.category_id)).all()
+    return categories
+
+@app.route('/about')
+def about():
+    return render_template('about.html',brands=brands(),categories=categories())
+
+@app.route('/stylist')
+def stylist():
+    return render_template('stylist.html',brands=brands(),categories=categories())        
 
 @app.route('/payment',methods=['POST'])
 def payment():
@@ -29,9 +46,6 @@ def payment():
     db.session.commit()
     return redirect(url_for('myorders'))
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
 
 
 
@@ -126,9 +140,5 @@ def myorders():
         customer = Register.query.filter_by(id=customer_id).first()
         orders = CustomerOrder.query.filter_by(customer_id=customer_id,status=status).order_by(CustomerOrder.id.desc()).all()  
         list = [] 
-    return render_template('customer/myorders.html',customer=customer,orders=orders, list=list)
+    return render_template('customer/myorders.html',customer=customer,orders=orders, list=list,brands=brands(),categories=categories())
 
-@app.route('/stylist')
-@login_required
-def stylist():
-    return render_template('stylist.html')
