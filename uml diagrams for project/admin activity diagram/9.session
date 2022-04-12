@@ -1,0 +1,12 @@
+window_sizes 1920 991 450 1464 937 0
+
+diagrams
+  active  activitydiagram_ref 128009 // act
+    1464 937 100 A4 0 0
+end
+show_stereotypes
+selected activitydiagram_ref 128009 // act
+open
+  activity_ref 128009 // act
+end
+end

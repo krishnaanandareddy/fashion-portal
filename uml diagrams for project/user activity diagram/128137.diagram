@@ -1,0 +1,241 @@
+format 224
+
+activitynodecanvas 128009 activitynode_ref 128137 // initial_node
+  xyz 402.109 15.3639 2000
+end
+activityactioncanvas 128137 activityaction_ref 128137 // activity action Login
+  
+  show_opaque_action_definition default
+  xyzwh 360.24 73.639 2000 101 61
+end
+activityactioncanvas 128265 activityaction_ref 128265 // activity action Authentication
+  
+  show_opaque_action_definition default
+  xyzwh 363.533 174.011 2000 101 61
+end
+activitynodecanvas 128393 activitynode_ref 128265 // decision
+  xyz 404.971 269.652 2000
+end
+activitynodecanvas 128521 activitynode_ref 128393 // fork
+  horizontal  xyzwh 297.382 347.891 2000 229 15
+end
+activityactioncanvas 129801 activityaction_ref 128393 // activity action Search Product
+  
+  show_opaque_action_definition default
+  xyzwh 433.927 447.367 2000 101 61
+end
+activityactioncanvas 129929 activityaction_ref 128521 // activity action Add to cart
+  
+  show_opaque_action_definition default
+  xyzwh 410.202 837.888 2000 101 61
+end
+activityactioncanvas 130057 activityaction_ref 128649 // activity action Make payment
+  
+  show_opaque_action_definition default
+  xyzwh 561.419 836.863 2000 101 61
+end
+activityactioncanvas 130185 activityaction_ref 128777 // activity action confirm order
+  
+  show_opaque_action_definition default
+  xyzwh 564.625 940.824 2000 101 61
+end
+activityactioncanvas 130313 activityaction_ref 128905 // activity action view Product details
+  
+  show_opaque_action_definition default
+  xyzwh 440.165 559.987 2000 101 61
+end
+activityactioncanvas 130569 activityaction_ref 129161 // activity action Chat with experts and get suggestions
+  
+  show_opaque_action_definition default
+  xyzwh 278.093 538.849 2000 151 53
+end
+activityactioncanvas 130697 activityaction_ref 129289 // activity action View previous orders
+  
+  show_opaque_action_definition default
+  xyzwh 83.8525 427.033 2005 101 61
+end
+activityactioncanvas 130825 activityaction_ref 129417 // activity action clear cart
+  
+  show_opaque_action_definition default
+  xyzwh 707.183 749.779 2000 101 61
+end
+activityactioncanvas 130953 activityaction_ref 129545 // activity action view cart
+  
+  show_opaque_action_definition default
+  xyzwh 636.392 396.862 2000 101 61
+end
+activitynodecanvas 131849 activitynode_ref 128649 // decision
+  xyz 441.738 776.844 2000
+end
+activityactioncanvas 131977 activityaction_ref 129673 // activity action check suggested products details
+  
+  show_opaque_action_definition default
+  xyzwh 277.219 628.046 2000 153 57
+end
+activityactioncanvas 133897 activityaction_ref 129801 // activity action view catalog
+  
+  show_opaque_action_definition default
+  xyzwh 306.285 441.125 2000 101 61
+end
+activitynodecanvas 134921 activitynode_ref 128905 // join
+  horizontal  xyzwh 383.071 732.862 2000 147 15
+end
+activitynodecanvas 136585 activitynode_ref 129033 // fork
+  horizontal  xyzwh 644.735 610.349 2000 115 15
+end
+activitynodecanvas 138377 activitynode_ref 129161 // join
+  horizontal  xyzwh 318.036 1080.94 2000 259 15
+end
+activityactioncanvas 139529 activityaction_ref 129929 // activity action logout
+  
+  show_opaque_action_definition default
+  xyzwh 397.804 1124.29 2013 101 61
+end
+activitynodecanvas 139785 activitynode_ref 129289 // activity_final
+  xyz 657 1145 2000
+end
+flowcanvas 128649 flow_ref 128137 // <flow>
+  
+  from ref 128009 z 2001 to ref 128137
+   write_horizontally default
+end
+flowcanvas 128777 flow_ref 128265 // <flow>
+  
+  from ref 128137 z 2001 to ref 128265
+   write_horizontally default
+end
+flowcanvas 128905 flow_ref 128393 // <flow>
+  
+  from ref 128265 z 2001 to ref 128393
+   write_horizontally default
+end
+flowcanvas 129033 flow_ref 128521 // <flow>
+  decenter_end 521
+  
+  from ref 128393 z 2001 to ref 128521
+   write_horizontally default
+end
+flowcanvas 129161 flow_ref 128649 // <flow>
+  
+  from ref 128393 z 2001 to point 584.592 278.625
+  line 129545 z 2001 to point 585.155 95.2797
+  line 129673 z 2001 to ref 128137
+   write_horizontally default
+end
+flowcanvas 131209 flow_ref 128777 // <flow>
+  
+  from ref 128521 z 2001 to ref 129801
+   write_horizontally default
+end
+flowcanvas 131465 flow_ref 129033 // <flow>
+  
+  from ref 128521 z 2006 to ref 130697
+   write_horizontally default
+end
+flowcanvas 131593 flow_ref 129161 // <flow>
+  
+  from ref 128521 z 2001 to ref 130953
+   write_horizontally default
+end
+flowcanvas 131721 flow_ref 129289 // <flow>
+  decenter_end 481
+  
+  from ref 129801 z 2001 to ref 130313
+   write_horizontally default
+end
+flowcanvas 132233 flow_ref 129545 // <flow>
+  decenter_end 495
+  
+  from ref 130569 z 2001 to ref 131977
+   write_horizontally default
+end
+flowcanvas 134025 flow_ref 130185 // <flow>
+  
+  from ref 128521 z 2001 to ref 133897
+   write_horizontally default
+end
+flowcanvas 134153 flow_ref 130313 // <flow>
+  
+  from ref 133897 z 2001 to ref 130569
+   write_horizontally default
+end
+flowcanvas 135049 flow_ref 130697 // <flow>
+  
+  from ref 131977 z 2001 to ref 134921
+   write_horizontally default
+end
+flowcanvas 135177 flow_ref 130825 // <flow>
+  
+  from ref 130313 z 2001 to ref 134921
+   write_horizontally default
+end
+flowcanvas 135305 flow_ref 130953 // <flow>
+  
+  from ref 134921 z 2001 to ref 131849
+   write_horizontally default
+end
+flowcanvas 135433 flow_ref 131081 // <flow>
+  
+  from ref 131849 z 2001 to point 238.641 795.047
+  line 135561 z 2001 to point 232.989 455.264
+  line 135689 z 2001 to ref 133897
+   write_horizontally default
+end
+flowcanvas 135817 flow_ref 131209 // <flow>
+  
+  from ref 131849 z 2001 to ref 129929
+   write_horizontally default
+end
+flowcanvas 136329 flow_ref 131465 // <flow>
+  
+  from ref 129929 z 2001 to ref 130057
+   write_horizontally default
+end
+flowcanvas 136457 flow_ref 131593 // <flow>
+  
+  from ref 130057 z 2001 to ref 130185
+   write_horizontally default
+end
+flowcanvas 136969 flow_ref 131849 // <flow>
+  
+  from ref 136585 z 2001 to ref 130825
+   write_horizontally default
+end
+flowcanvas 138121 flow_ref 132233 // <flow>
+  
+  from ref 136585 z 2001 to ref 130057
+   write_horizontally default
+end
+flowcanvas 138249 flow_ref 132361 // <flow>
+  
+  from ref 130953 z 2001 to ref 136585
+   write_horizontally default
+end
+flowcanvas 138889 flow_ref 132617 // <flow>
+  
+  from ref 130185 z 2001 to ref 138377
+   write_horizontally default
+end
+flowcanvas 139017 flow_ref 132745 // <flow>
+  
+  from ref 130697 z 2006 to point 132.046 814.035
+  line 139145 z 2006 to ref 138377
+   write_horizontally default
+end
+flowcanvas 139273 flow_ref 132873 // <flow>
+  
+  from ref 130825 z 2001 to point 762.868 1048.12
+  line 139401 z 2001 to ref 138377
+   write_horizontally default
+end
+flowcanvas 139657 flow_ref 133001 // <flow>
+  
+  from ref 138377 z 2014 to ref 139529
+   write_horizontally default
+end
+flowcanvas 139913 flow_ref 133129 // <flow>
+  
+  from ref 139529 z 2014 to ref 139785
+   write_horizontally default
+end
+end

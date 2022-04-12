@@ -14,13 +14,13 @@ def admin():
     products = Addproduct.query.all()
     return render_template('admin/index.html',title="Admin Page",products=products)
 
-@app.route('/authors')
+@app.route('/brands')
 def brands():
     if 'email' not in session:
         flash(f'Please login first','danger')
         return redirect(url_for('login'))
     brands = Brand.query.order_by(Brand.id.desc()).all()
-    return render_template('admin/author.html', title='Authors',brands=brands)
+    return render_template('admin/author.html', title='Brands',brands=brands)
 
 
 @app.route('/categories')

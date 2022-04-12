@@ -37,7 +37,7 @@ def payment():
     )
     charge = stripe.Charge.create(
       customer=customer.id,
-      description='E Book Store',
+      description='Online Fashion portal',
       amount=amount,
       currency='inr',
     )

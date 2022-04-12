@@ -24,7 +24,7 @@ def begin():
 def home():
     page = request.args.get('page',1, type=int)
     products = Addproduct.query.filter(Addproduct.id > 0).order_by(Addproduct.id.desc()).paginate(page=page, per_page=8)
-    return render_template('products/index.html', products=products,brands=brands(),categories=categories(),title='E Book Store')
+    return render_template('products/index.html', products=products,brands=brands(),categories=categories(),title='Online Fshion Portal')
 
 @app.route('/result')
 def result():
@@ -58,7 +58,7 @@ def get_category(id):
     get_cat_prod = Addproduct.query.filter_by(category=get_cat).paginate(page=page, per_page=8)
     return render_template('products/index.html',get_cat_prod=get_cat_prod,brands=brands(),categories=categories(),get_cat=get_cat)
 
-@app.route('/addauthor',methods=['GET','POST'])
+@app.route('/addBrand',methods=['GET','POST'])
 def addbrand():
     if 'email' not in session:
         flash(f'Please login first','danger')
@@ -67,12 +67,12 @@ def addbrand():
         getbrand = request.form.get('brand')
         brand = Brand(name=getbrand)
         db.session.add(brand)
-        flash(f'The Author {getbrand} was added to your database','success')
+        flash(f'The Brand {getbrand} was added to your database','success')
         db.session.commit()
         return redirect(url_for('addbrand'))
-    return render_template('products/addauthor.html', title='Add Author',brands='brands')
+    return render_template('products/addauthor.html', title='Add Brand',brands='brands')
 
-@app.route('/updateauthor/<int:id>',methods=['GET','POST'])
+@app.route('/updateBrand/<int:id>',methods=['GET','POST'])
 def updatebrand(id):
     if 'email' not in session:
         flash('Login first please','danger')
@@ -81,11 +81,11 @@ def updatebrand(id):
     brand = request.form.get('brand')
     if request.method =="POST":
         updatebrand.name = brand
-        flash(f'The Author {updatebrand.name} was changed to {brand}','success')
+        flash(f'The Brand {updatebrand.name} was changed to {brand}','success')
         db.session.commit()
         return redirect(url_for('brands'))
     brand = updatebrand.name
-    return render_template('products/addauthor.html', title='Udate brand',brands='brands',updatebrand=updatebrand)
+    return render_template('products/addauthor.html', title='Update brand',brands='brands',updatebrand=updatebrand)
 
 
 @app.route('/deleteauthor/<int:id>', methods=['GET','POST'])
